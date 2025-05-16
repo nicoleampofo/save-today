@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Array Elements</title>
+</head>
+<body>
+    <button onclick="printNextNumber()">Print Next Number</button>
+    <p id="output"></p>
+
+    <script>
+        // Store your array outside the function so it persists across clicks
+        const arr = [1, 2, 3, 4, 5];
+
+        function printNextNumber() {
+            if (arr.length > 0) {
+                const num = arr.shift(); // remove and get the first element
+                document.getElementById("output").innerText = "Next number: " + num;
+            } else {
+                document.getElementById("output").innerText = "No more numbers!";
+            }
+        }
+    </script>
+</body>
+</html>
