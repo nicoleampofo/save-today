@@ -1,5 +1,6 @@
 // connect this file to the DOM
 const select = document.getElementById('todays-amount');
+const acceptBtn = document.getElementById('amountThisRound');
 
 
 // create a function to take two numbers and create a sorted array with the specified min and max
@@ -40,8 +41,21 @@ function printNextNumber() {
     if (result.length > 0) {
         const num = result.shift(); // remove and get the first element
         select.innerText = "Amount to save today: $" + num;
-        console.log(num);
+        return num;
     } else {
         select.innerText = "Congratulations! You have reached your savings goal!";
     }
 }
+
+// total amount saved
+function accept() {
+  let sum = 0;
+  for (let i = 0; i < result.length; i++) {
+    sum += result[i];
+    acceptBtn.innerText = "Amount saved this round: $" + sum;
+    console.log("sum: ", sum);
+    return sum;
+  }
+}
+
+console.log("accept(result)): ", accept(result))
