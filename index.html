@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- https://www.youtube.com/watch?v=tykncscV93Y -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +15,7 @@
                 <a href="/">Save Today</a>
                 <h2>Save Today</h2>
                 <ul>
+                    <li><a class="active" href="index.html">Save Today</a></li>
                     <li><a href="#">Calendar</a></li>
                     <li><a href="#">My Savings</a></li>
                     <li><a href="#">Log Out</a></li>
@@ -26,12 +28,12 @@
     <main>
     <section>
         <div>
-            <h1>Save Today</h1>
+            <h1></h1>
             <p>How much will you save today?</p>
             <button onclick="printNextNumber()">Save Now</button>
             <h3 id="todays-amount">Today's Savings Amount</h3>
             <button onclick="accept()">Accept</button>
-            <button>Skip</button>
+            <button onclick="printtext()">Skip</button>
             </div>
     </section>
 </main>
@@ -40,7 +42,7 @@
 
 <section>
     <p id="amountThisRound">Total Saved this month: {month amount}</p>
-    <p>Total saved this year: {year amount}</p>
+    <p id="printtext">Total saved this year: {year amount}</p>
 </section>
 
 
