@@ -1,7 +1,7 @@
 // connect this file to the DOM
 const select = document.getElementById('todays-amount');
 const acceptBtn = document.getElementById('amountThisRound');
-const printBtn = document.getElementById('printtext')
+const skipBtn = document.getElementById('printtext')
 
 
 // create a function to take two numbers and create a sorted array with the specified min and max
@@ -44,7 +44,7 @@ function printNextNumber() {
         select.innerText = "Amount to save today: $" + num;
         return num;
     } else {
-        select.innerText = "Congratulations! You have reached your savings goal!";
+        select.innerText = "Congratulations! You have completed the savings challenge!";
     }
 }
 
