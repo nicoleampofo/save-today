@@ -1,7 +1,7 @@
 // connect this file to the DOM
 const select = document.getElementById('todays-amount');
 const acceptBtn = document.getElementById('amountThisRound');
-const skipBtn = document.getElementById('printtext')
+// const skipBtn = document.getElementById('printtext')
 
 
 // create a function to take two numbers and create a sorted array with the specified min and max
@@ -40,31 +40,30 @@ console.log("result: ", result);
 
 function printNextNumber() {
     if (result.length > 0) {
-        const num = result.shift(); // remove and get the first element
+        let num = result.shift(); // remove and get the first element
         select.innerText = "Amount to save today: $" + num;
         // document.getElementById("visible-btn").disabled = true;
     } else {
         select.innerText = "Congratulations! You have completed the savings challenge!";
+        document.getElementById("accept-btn").disabled = true;
     }
 }
 
 // total amount saved, printed to the DOM in consecutive order
-let sum = 0;
+sum = result[0];
+console.log("sum before loop", sum)
+
 function accept() {
-  console.log("nicole", result)
-  for (let i = 0; i < result.length; i++) {
+  if (result.length >= 0) {
     acceptBtn.innerText = "Amount saved this round: $" + sum;
-    sum += result[i];
-    console.log("result[i]: ", result[i]);
-    console.log("sum: ", sum);
+    sum += result[0];
     // document.getElementById("visible-btn").disabled = false;
-    return sum;
+    console.log("accept sum:", sum);
   }
 }
 
 // for skip function, enable button after Skip is selected
 
-// console.log("accept(result)): ", accept(result))
 
 // function printtext(arr){
 //   // take in the result array
