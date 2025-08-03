@@ -30,7 +30,7 @@
         <div>
             <h1></h1>
             <p>How much will you save today?</p>
-            <button onclick="printNextNumber()">Save Now</button>
+            <button id="visible-btn" onclick="printNextNumber()">Save Now</button>
             <h3 id="todays-amount">Today's Savings Amount</h3>
             <button onclick="accept()">Accept</button>
             <button onclick="skip()">Skip</button>
@@ -41,7 +41,7 @@
     <!-- Section 2: Statistics -->
 
 <section>
-    <p id="amountThisRound">Total Saved this month: {month amount}</p>
+    <p id="amountThisRound">Total saved this round: </p>
     <p id="amountThisYear">Total saved this year: {year amount}</p>
 </section>
 

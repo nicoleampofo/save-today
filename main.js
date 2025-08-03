@@ -42,35 +42,38 @@ function printNextNumber() {
     if (result.length > 0) {
         const num = result.shift(); // remove and get the first element
         select.innerText = "Amount to save today: $" + num;
-        return num;
+        // document.getElementById("visible-btn").disabled = true;
     } else {
         select.innerText = "Congratulations! You have completed the savings challenge!";
     }
 }
 
 // total amount saved, printed to the DOM in consecutive order
+let sum = 0;
 function accept() {
-  let sum = 0;
+  console.log("nicole", result)
   for (let i = 0; i < result.length; i++) {
-    sum += result[i];
     acceptBtn.innerText = "Amount saved this round: $" + sum;
+    sum += result[i];
+    console.log("result[i]: ", result[i]);
     console.log("sum: ", sum);
+    // document.getElementById("visible-btn").disabled = false;
     return sum;
   }
 }
 
+// for skip function, enable button after Skip is selected
 
 // console.log("accept(result)): ", accept(result))
-console.log("accept:", accept(3, 2, 1, 4, 5)) // returns 15
 
-function printtext(arr){
-  // take in the result array
-  // for the first item, if it is accepted, store the value in the DOM
-  // for the next item, if it is accepted, add the value to the first number that is in the DOM and display that to the DOM
-  // if the number is skipped, do nothin? or display the previous total?
-  // printBtn.innerText= "This is what prints"
-  printBtn.innerText = num
-  let num = 0;
-}
+// function printtext(arr){
+//   // take in the result array
+//   // for the first item, if it is accepted, store the value in the DOM
+//   // for the next item, if it is accepted, add the value to the first number that is in the DOM and display that to the DOM
+//   // if the number is skipped, do nothin? or display the previous total?
+//   // printBtn.innerText= "This is what prints"
 
-printtext([1, 2, 3, 4, 5]);
+//   let num = 0;
+// }
+
+// printtext([1, 2, 3, 4, 5]);
