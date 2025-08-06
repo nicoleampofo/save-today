@@ -1,7 +1,6 @@
 // connect this file to the DOM
 const select = document.getElementById('todays-amount');
 const amountSavedThisRound = document.getElementById('amountThisRound');
-// const skipBtn = document.getElementById('printtext')
 
 
 // create a function to take two numbers and create a sorted array with the specified min and max
@@ -42,13 +41,13 @@ function printNextNumber() {
     if (result.length > 0) {
         let num = result.shift(); // remove and get the first element
         select.innerText = "Amount to save today: $" + num;
-        document.getElementById("save-btn").disabled = true;
-        document.getElementById("accept-btn").disabled = false;
-        document.getElementById("skip-btn").disabled = false;
+        // document.getElementById("save-btn").disabled = true;
+        // document.getElementById("accept-btn").disabled = false;
+        // document.getElementById("skip-btn").disabled = false;
     } else {
         select.innerText = "Congratulations! You have completed the savings challenge!";
-        document.getElementById("accept-btn").disabled = true;
-        document.getElementById("skip-btn").disabled = true;
+        // document.getElementById("accept-btn").disabled = true;
+        // document.getElementById("skip-btn").disabled = true;
     }
 }
 
@@ -60,9 +59,9 @@ function accept() {
   if (result.length >= 0) {
     amountSavedThisRound.innerText = "Amount saved this round: $" + sum;
     sum += result[0];
-    document.getElementById("save-btn").disabled = false;
-    document.getElementById("accept-btn").disabled = true;
-    document.getElementById("skip-btn").disabled = true;
+    // document.getElementById("save-btn").disabled = false;
+    // document.getElementById("accept-btn").disabled = true;
+    // document.getElementById("skip-btn").disabled = true;
     console.log("accept sum:", sum);
   }
 }
@@ -70,7 +69,28 @@ function accept() {
 
 function skip() {
   sum += 0;
-  document.getElementById("skip-btn").disabled = true;
-  document.getElementById("save-btn").disabled = false;
+  // document.getElementById("skip-btn").disabled = true;
+  // document.getElementById("save-btn").disabled = false;
 
 }
+
+
+// var acceptBtn = document.getElementById('accept-btn');
+// var skipBtn = document.getElementById('skip-btn');
+
+// const arr = [];
+
+// function accept() {
+//     arr.push(1);
+//     let result = arr.reduce ((sum, current) =>
+//     sum + current, 0)
+
+// console.log("nicole", result)
+// }
+// function skip() {
+//     arr.push(2)
+//     let result = arr.reduce ((sum, current) =>
+//     sum + current, 0)
+
+// console.log("nicole", result)
+// }
