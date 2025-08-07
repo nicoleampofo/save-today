@@ -24,28 +24,30 @@
         </p>
     </header>
 
+
     <!-- Section 1: Saving Today -->
     <main>
     <section>
         <div>
             <h1></h1>
             <p>How much will you save today?</p>
-            <button id="visible-btn" onclick="printNextNumber()">Save Now</button>
+            <button id="save-btn" onclick="printNextNumber()">Save Now</button>
             <h3 id="todays-amount">Today's Savings Amount</h3>
             <button id="accept-btn" onclick="accept()">Accept</button>
-            <button onclick="skip()">Skip</button>
+            <button id="skip-btn" onclick="skip()">Skip</button>
             </div>
     </section>
 </main>
 
+
     <!-- Section 2: Statistics -->
 
 <section>
-    <p id="amountThisRound">Total saved this round: </p>
-    <p id="amountThisYear">Total saved this year: {year amount}</p>
+    <p id="amount-this-round">Total saved this round: </p>
+    <p id="amount-this-year">Total saved this year: {year amount}</p>
 </section>
-
 
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
+

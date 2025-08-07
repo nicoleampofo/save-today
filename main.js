@@ -1,8 +1,9 @@
 // connect this file to the DOM
 const select = document.getElementById('todays-amount');
-const amountSavedThisRound = document.getElementById('amountThisRound');
-// const skipBtn = document.getElementById('printtext')
-
+const amountThisRound = document.getElementById('amount-this-round');
+var acceptBtn = document.getElementById('accept-btn');
+var skipBtn = document.getElementById('skip-btn');
+var saveBtn = document.getElementById("save-btn");
 
 // create a function to take two numbers and create a sorted array with the specified min and max
 function sortedArray(min, max) {
@@ -37,40 +38,37 @@ const result = randomizeArray(myRange);
 console.log("result: ", result);
 
 // print one number at a time to the DOM
-
+let arr =[];
 function printNextNumber() {
     if (result.length > 0) {
-        let num = result.shift(); // remove and get the first element
+        let num = result.shift();
         select.innerText = "Amount to save today: $" + num;
-        document.getElementById("save-btn").disabled = true;
-        document.getElementById("accept-btn").disabled = false;
-        document.getElementById("skip-btn").disabled = false;
+        arr.push(num);
+        saveBtn.disabled = true;
+        acceptBtn.disabled = false;
+        skipBtn.disabled = false;
     } else {
         select.innerText = "Congratulations! You have completed the savings challenge!";
-        document.getElementById("accept-btn").disabled = true;
-        document.getElementById("skip-btn").disabled = true;
+        acceptBtn.disabled = true;
+        skipBtn.disabled = true;
     }
 }
 
-// total amount saved, printed to the DOM in consecutive order
-sum = result[0];
-console.log("sum before loop", sum)
-
+// functionality for when Accept is selected
 function accept() {
-  if (result.length >= 0) {
-    amountSavedThisRound.innerText = "Amount saved this round: $" + sum;
-    sum += result[0];
-    document.getElementById("save-btn").disabled = false;
-    document.getElementById("accept-btn").disabled = true;
-    document.getElementById("skip-btn").disabled = true;
-    console.log("accept sum:", sum);
-  }
+  let amountSaved = arr.reduce ((sum, current) =>
+      sum + current, 0)
+    amountThisRound.innerText = "Total saved this round: $" + amountSaved;
+    saveBtn.disabled = false;
+    acceptBtn.disabled = true;
+    skipBtn.disabled = true;
 }
 
-
+// functionality for when Skip is selected
 function skip() {
-  sum += 0;
-  document.getElementById("skip-btn").disabled = true;
-  document.getElementById("save-btn").disabled = false;
-
+  let lastArr = arr.at(-1);
+  arr.pop(lastArr)
+  saveBtn.disabled = false;
+  acceptBtn.disabled = true;
+  skipBtn.disabled = true;
 }
